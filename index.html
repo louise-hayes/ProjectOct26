@@ -8,14 +8,12 @@
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
     <!--Bootstrap CDN-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!--JQuery CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- custom styles -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+     <script type="text/javascript" src="main.js"></script>
     <title>Employee Data Management</title>
 
 </head>
@@ -92,21 +90,21 @@
                     <form style="margin:15px;">
                         <div class="form-group">
                             <label for="name">Employee Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Employee Name" required>
+                            <input id="name-input" type="text" class="form-control" placeholder="Enter Employee Name" required>
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <input type="text" class="form-control" placeholder="Enter Employee Role" required>
+                            <input id="role-input" type="text" class="form-control" placeholder="Enter Employee Role" required>
                         </div>
                         <div class="form-group">
                             <label for="start date">Start Date</label>
-                            <input type="date" class="form-control" placeholder="Start Date" required>
+                            <input id="start-input" type="date" class="form-control" placeholder="Start Date" required>
                         </div>
                         <div class="form-group">
                             <label for="monthly rate">Monthly Rate</label>
-                            <input type="number" class="form-control" placeholder="Enter Monthly Rate" required>
+                            <input id="rate-input" type="number" class="form-control" placeholder="Enter Monthly Rate" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="add-user" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
 
@@ -117,10 +115,8 @@
     </div>
 
     <!--Bootstrap Stuff-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 
 </html>
