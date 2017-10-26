@@ -21,8 +21,8 @@
         <div class="row">
 
             <div class="col-md-12" style="text-align:center;">
-                <div class="jumbotron">
-                    <h1>Employee Data Management</h1>
+                <div class="jumbotron" style="background-color:black; color:white;">
+                    <h1 style="font-size:60px;">Employee Data Management</h1>
                     <p>A Comprehensive Directory of Employee Billable Hours</p>
                 </div>
             </div>
@@ -30,16 +30,19 @@
         </div>
 
     </div>
-    
-    <br>
+
     <br>
     <br>
     <br>
 
-    <div class="container-fluid table" id="tableData">
+    <div class="container" id="tableData">
         <div class="row">
             <div class="col-md-12">
-                <table>
+
+                <div class="card">
+                    <div class="card-header" style="background-color:#4286f4; color:white;">
+                        Current Employees
+                    </div>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -62,43 +65,44 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
             </div>
-            </table>
 
         </div>
     </div>
 
     <br>
     <br>
-    <br>
-    <br>
 
-    <div class="container-fluid">
+    <div class="container">
 
         <div class="row">
 
             <div class="col-md-12">
-
-                <form>
-                    <div class="form-group">
-                        <label for="name">Employee Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Employee Name">
+                <div class="card">
+                    <div class="card-header" style="background-color:#4286f4; color:white;">
+                        Add Employee
                     </div>
-                    <div class="form-group">
-                        <label for="role">Role</label>
-                        <input type="text" class="form-control" placeholder="Enter Employee Role">
-                    </div>
-                    <div class="form-group">
-                        <label for="start date">Start Date</label>
-                        <input type="date" class="form-control" placeholder="Start Date">
-                    </div>
-                    <div class="form-group">
-                        <label for="monthly rate">Monthly Rate</label>
-                        <input type="number" class="form-control" placeholder="Enter Monthly Rate">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <form style="margin:15px;">
+                        <div class="form-group">
+                            <label for="name">Employee Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Employee Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <input type="text" class="form-control" placeholder="Enter Employee Role" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="start date">Start Date</label>
+                            <input type="date" class="form-control" placeholder="Start Date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthly rate">Monthly Rate</label>
+                            <input type="number" class="form-control" placeholder="Enter Monthly Rate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
 
             </div>
 
