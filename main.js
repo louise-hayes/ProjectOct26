@@ -50,6 +50,8 @@ database.ref().on("child_added", function (childSnapshot) {
     var monthsSinceStart = moment().diff(start, "months");
     console.log(monthsSinceStart);
 
+    var totalBilled = (monthsSinceStart > 0) ? monthsSinceStart * rate : rate;
+   
     // full list of items to the well
     var varDiv = $('<tr>')
     var td1 = $('<td>' + name + '</td>');
@@ -57,7 +59,7 @@ database.ref().on("child_added", function (childSnapshot) {
     var td3 = $('<td>' + start + '</td>');
     var td4 = $('<td>' + monthsSinceStart + '</td>');
     var td5 = $('<td>' + rate + '</td>');
-    var td6 = $('<td>' + '</td>');
+    var td6 = $('<td>' + totalBilled + '</td>');
 
     varDiv.append(td1);
     varDiv.append(td2);
