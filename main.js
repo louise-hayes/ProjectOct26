@@ -13,59 +13,62 @@ firebase.initializeApp(config);
 // Create a variable to reference the database
 var database = firebase.database();
 
-
 // Initial Values
 var name = "";
 var role = "";
 var start = "";
-var rate = "";
+var rate = 0;
 
-// Setup
 $(document).ready(function() {
-
-
-    // user clicked in the login area
+    // form submit handler
     $('body').on('click', '#add-user', function(event) {
-        // console.log('player clicked: ' + player);
         event.preventDefault();
-        console.log('adding user....');
         name = $("#name-input").val().trim();
         role = $("#role-input").val().trim();
-        rate = $("#rate-input").val().trim();
         start = $("#start-input").val().trim();
+        rate = parseInt($("#rate-input").val().trim());
         // Code for handling the push
         database.ref().push({
             name: name,
-            // email: email,
             role: role,
             start: start,
+            rate: rate,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
     });
 });
 
 
+// Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+database.ref().on("child_added", function (childSnapshot) {
 
+    var name = childSnapshot.val().name;
+    var role = childSnapshot.val().role;
+    var start = (childSnapshot.val().start);
+    var rate = (childSnapshot.val().rate);
 
-/*
-// Firebase watcher + initial loader + order/limit HINT: .on("child_added"
-database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-    // storing the snapshot.val() in a variable for convenience
-    var sv = snapshot.val();
+    var monthsSinceStart = moment().diff(start, "months");
+    console.log(monthsSinceStart);
 
-    // Console.loging the last user's data
-    console.log(sv.name);
-    console.log(sv.email);
-    console.log(sv.age);
-    console.log(sv.comment);
+    // full list of items to the well
+    var varDiv = $('<tr>')
+    var td1 = $('<td>' + name + '</td>');
+    var td2 = $('<td>' + role + '</td>');
+    var td3 = $('<td>' + start + '</td>');
+    var td4 = $('<td>' + monthsSinceStart + '</td>');
+    var td5 = $('<td>' + rate + '</td>');
+    var td6 = $('<td>' + '</td>');
 
-    // Change the HTML to reflect
-    $("#name-display").text(sv.name);
-    $("#email-display").text(sv.email);
-    $("#age-display").text(sv.age);
-    $("#comment-display").text(sv.comment);
+    varDiv.append(td1);
+    varDiv.append(td2);
+    varDiv.append(td3);
+    varDiv.append(td4);
+    varDiv.append(td5);
+    varDiv.append(td6);
+
+    $("#tableBody").append(varDiv);
 
     // Handle the errors
-}, function(errorObject) {
+}, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
-});*/
+});
